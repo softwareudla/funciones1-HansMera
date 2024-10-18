@@ -9,5 +9,6 @@ int sumarMatriz(int m[], int tamaño);
 int promeMatriz(int m[], int tamaño);
 int ValorMaxMatriz(int m[], int tamaño);
 int ValorMinMatriz(int m[], int tamaño);
+void buscarProducto (char produ[][30], int precio [], char productobuscar [50], int i);
 
 #endif

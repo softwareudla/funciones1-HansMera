@@ -6,7 +6,7 @@ int main() {
     int precios[10] = {0};  // Arreglo de precios
     char productos[10][30]; // Arreglo de nombres de productos
     char buscar[30];        // Cadena para buscar producto
-    int cont = 0, menu1 = 0, opcion = 0, result = 0;
+    int cont = 0, menu1 = 0, opcion = 0, result = 0, i=0;
     int cambiarprod = 0, cambiarpre = 0;
 
     // Ingreso de productos y precios
@@ -67,20 +67,8 @@ int main() {
             printf("El precio más bajo de tus productos es %d\n", result);
             break;
         case 7:
-            printf("¿Cuál es el producto que deseas buscar?\n");
-            fgets(buscar, 30, stdin);  // Usamos fgets en lugar de scanf
-            buscar[strcspn(buscar, "\n")] = 0; // Eliminar el salto de línea
-            int encontrado = 0;  // Variable para indicar si se encontró el producto
-            for (int i = 0; i < 10; i++) {
-                if ((buscar[0]) == productos[i]) {
-                    printf("El producto existe y vale %d\n", precios[i]);
-                    encontrado = 1;
+            buscarProducto(&productos[10],&precios[10],&buscar[30],i );
                     break;  // Salir del ciclo al encontrar el producto
-                }
-            }
-            if (!encontrado) {
-                printf("Producto no encontrado.\n");
-            }
             break;
         case 8:
             printf("Saliendo del programa\n");

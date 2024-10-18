@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "funciones.h"
+#include <string.h>  // Librería para strcmp
 
 // Función para escanear productos
 int scan_produ(char m[][30], int i) {
@@ -51,4 +52,19 @@ int ValorMinMatriz(int m[], int tamaño) {
         }
     }
     return premin;
+}
+
+void buscarProducto (char produ[][30], int precio [], char productobuscar [30], int i){
+    int noencontrado=0;
+    printf("Cual es el producto que deseas buscar?\n");
+    fgets(productobuscar[i], 30, stdin);
+    for (i=0;i<10;i++){
+    if (strcmp(produ[i], productobuscar)==0){
+        noencontrado=noencontrado+1;
+        printf("tu producto existe\n, se llama %s \n tiene un precio de %d\n", produ[i], precio[i]);
+    }
+    if (noencontrado!=0){
+        printf("producto no encontrado");
+    }
+    }
 }
