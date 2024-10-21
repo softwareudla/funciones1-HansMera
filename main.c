@@ -4,6 +4,7 @@
 
 int main() {
     int precios[10] = {0};  // Arreglo de precios
+    int cantidad[10] ={0};  //Arreglo de cantidad de inventarios
     char productos[10][30]; // Arreglo de nombres de productos
     char buscar[30];        // Cadena para buscar producto
     int cont = 0, menu1 = 0, opcion = 0, result = 0, i=0;
@@ -13,6 +14,7 @@ int main() {
     for (int i = 0; i < 10; i++) {
         scan_produ(productos, i);
         scan_precio(precios, i);
+        scan_cantidad(cantidad,i);
     }
 
     // Menú de opciones
@@ -24,8 +26,9 @@ int main() {
         printf("4. Sacar el valor promedio de los precios\n");
         printf("5. Conocer el precio más alto\n");
         printf("6. Conocer el precio más bajo\n");
-        printf("7. Buscar un producto\n");
-        printf("8. Salir\n");
+        printf("7. Sacar la suma total de tu inventario en dolares\n");
+        printf("8. Buscar un producto\n");
+        printf("9. Salir\n");
         scanf("%d", &opcion);
         getchar(); // Limpiar el buffer
 
@@ -67,17 +70,21 @@ int main() {
             printf("El precio más bajo de tus productos es %d\n", result);
             break;
         case 7:
+            result = sumarMatrizPC(precios, 10, cantidad );
+            printf("El stock total en dolares de tu inventario es %d\n", result);
+            break;
+        case 8:
             buscarProducto(&productos[i],&precios[i],&buscar[i],i );
                     break;  // Salir del ciclo al encontrar el producto
             break;
-        case 8:
+        case 9:
             printf("Saliendo del programa\n");
             break;
         default:
             printf("Opción no válida.\n");
             break;
         }
-    } while (opcion != 8);
+    } while (opcion != 9);
 
     return 0;
 }

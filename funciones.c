@@ -17,11 +17,28 @@ int scan_precio(int m[], int i) {
     return 0;
 }
 
+int scan_cantidad(int m[], int i) {
+    printf("Introduce la cantidad del producto %d: ", i + 1);
+    scanf("%d", &m[i]);  // Capturar el precio del producto
+    getchar(); // Limpiar el buffer
+    return 0;
+}
+
+
 // Función que suma los precios
 int sumarMatriz(int m[], int tamaño) {
     int suma = 0;
     for (int i = 0; i < tamaño; i++) {
         suma += m[i];
+    }
+    return suma;
+}
+
+// Función que suma los precios
+int sumarMatrizPC (int m[], int tamaño, int n[]) {
+    int suma = 0;
+    for (int i = 0; i < tamaño; i++) {
+        suma += m[i] * n[i];
     }
     return suma;
 }
