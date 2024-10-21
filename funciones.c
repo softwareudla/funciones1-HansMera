@@ -57,14 +57,14 @@ int ValorMinMatriz(int m[], int tamaño) {
 void buscarProducto (char produ[][30], int precio [], char productobuscar [30], int i){
     int noencontrado=0;
     printf("Cual es el producto que deseas buscar?\n");
-    fgets(productobuscar[i], 30, stdin);
+    fgets(&productobuscar[0], 30, stdin);
     for (i=0;i<10;i++){
-    if (strcmp(produ[i], productobuscar)==0){
-        noencontrado=noencontrado+1;
+    if (strcmp(productobuscar, produ[i])==0){
+        noencontrado=1;
         printf("tu producto existe\n, se llama %s \n tiene un precio de %d\n", produ[i], precio[i]);
     }
-    if (noencontrado!=0){
-        printf("producto no encontrado");
     }
+    if (noencontrado==0){
+        printf("producto no encontrado");
     }
 }

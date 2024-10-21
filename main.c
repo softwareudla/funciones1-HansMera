@@ -67,7 +67,7 @@ int main() {
             printf("El precio más bajo de tus productos es %d\n", result);
             break;
         case 7:
-            buscarProducto(&productos[10],&precios[10],&buscar[30],i );
+            buscarProducto(&productos[i],&precios[i],&buscar[i],i );
                     break;  // Salir del ciclo al encontrar el producto
             break;
         case 8:
